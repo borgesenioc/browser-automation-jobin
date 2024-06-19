@@ -1,6 +1,6 @@
 Here's a comprehensive `README.md` file for your project:
 
-```markdown
+
 # Jobin LinkedIn Automation
 
 This application automates browser actions required to run Jobin on LinkedIn accounts, ensuring efficient task execution while avoiding account flagging and blocking by LinkedIn. The application manages multiple LinkedIn accounts and Jobin licenses, handles execution errors, and automates task processes.
@@ -43,31 +43,31 @@ jobin-automation/
 ## Installation
 
 1. **Clone the repository**:
-    ```bash
+    bash
     git clone https://github.com/yourusername/jobin-automation.git
     cd jobin-automation
-    ```
+    
 
 2. **Install dependencies**:
-    ```bash
+    bash
     npm install
-    ```
+    
 
 3. **Set up environment variables**:
     Create a `.env` file in the root directory with the following content:
-    ```
+    
     EMAIL=your-email@example.com
     PASSWORD=your-email-password
     NOTIFY_EMAIL=notify-email@example.com
     PORT=3000
-    ```
+    
 
 4. **Configure accounts and settings**:
     - `config/accounts.json`: Add your LinkedIn accounts and Jobin license assignments.
     - `config/config.json`: Configure general settings like intervals, proxy settings, and thresholds.
 
     Example `config/accounts.json`:
-    ```json
+    json
     [
       {
         "username": "linkedin_user_1",
@@ -81,10 +81,9 @@ jobin-automation/
       }
       // Add more accounts as needed
     ]
-    ```
 
     Example `config/config.json`:
-    ```json
+    json
     {
       "interval": "0 * * * *",
       "maxInvitations": 900,
@@ -95,7 +94,7 @@ jobin-automation/
         "password": "your-proxy-password"
       }
     }
-    ```
+    
 
 ## Usage
 
@@ -104,16 +103,16 @@ jobin-automation/
     - If using a proxy, ensure the proxy settings in `config/config.json` are correct.
 
 2. **Run the application**:
-    ```bash
+    bash
     node app.js
-    ```
+    
 
 3. **Using a process manager (optional)**:
     To keep the application running continuously, use a process manager like PM2:
-    ```bash
+    bash
     npm install -g pm2
     pm2 start app.js
-    ```
+    
 
 ## Contributing
 
@@ -126,8 +125,3 @@ jobin-automation/
 ## License
 
 This project is licensed under the MIT License.
-```
-
-This `README.md` file provides a comprehensive guide for setting up, configuring, and running your Jobin LinkedIn automation application. Adjust the details such as repository URL and email addresses as needed for your specific setup.
-
-https://chatgpt.com/share/e/e020baa3-267b-4c44-b975-1e32d54e5378
