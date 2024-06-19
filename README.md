@@ -8,6 +8,21 @@ If my pending Linkedin invitations reach 900, Jobin has a feature where I can wi
 If there are any errors while logging into Linkedin, I need the app to stop trying to log in and send me a warning.
 I know Javascript, Node, and Express, so that is my preferred structure for now.
 If possible, I'd like to run this application from the cheapest structure possible. If Github can host the files and most of the application, that would be great.
+I need the app to run from an IP address that has the location set to New York City
 
 
 https://chatgpt.com/share/e/e020baa3-267b-4c44-b975-1e32d54e5378
+
+
+jobin-automation/
+│
+├── .env
+├── app.js
+├── schedule.js
+├── jobin.js
+├── linkedin.js
+├── license-manager.js
+├── error-handler.js
+└── config/
+    ├── accounts.json
+    └── config.json
