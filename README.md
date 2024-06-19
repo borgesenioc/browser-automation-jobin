@@ -23,7 +23,7 @@ This application automates browser actions required to run Jobin on LinkedIn acc
 
 ## Project Structure
 
-```
+
 jobin-automation/
 │
 ├── .env
@@ -38,7 +38,7 @@ jobin-automation/
 └── config/
     ├── accounts.json
     └── config.json
-```
+
 
 ## Installation
 
