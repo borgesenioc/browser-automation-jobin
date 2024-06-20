@@ -50,7 +50,7 @@ This application automates browser actions required to run Jobin on LinkedIn acc
 7. **Proxy/VPN support**: Ensures the IP address is set to New York City to avoid account flagging.
 
 ## Project Structure
-
+```
 jobin-automation/
 │
 ├── .env
@@ -65,6 +65,7 @@ jobin-automation/
 └── config/
 ├── accounts.json
 └── config.json
+```
 
 
 ## Installation
