@@ -1,34 +1,3 @@
-Here's a comprehensive `README.md` file for your project:
-
-
-# Jobin LinkedIn Automation
-
-This application automates browser actions required to run Jobin on LinkedIn accounts, ensuring efficient task execution while avoiding account flagging and blocking by LinkedIn. The application manages multiple LinkedIn accounts and Jobin licenses, handles execution errors, and automates task processes.
-
-## Requirements
-
-- Node.js
-- VPN service with IP address set to New York City (e.g., NordVPN, ExpressVPN, CyberGhost)
-- Proxy service (optional, if not using a VPN) such as Bright Data, Oxylabs, or Smartproxy
-
-## Features
-
-1. **Automates Jobin tasks**: Runs tasks on LinkedIn accounts using Jobin while managing multiple accounts and licenses.
-2. **Scheduled intervals**: Opens and closes the browser, Jobin, and LinkedIn at programmed intervals to avoid flagging.
-3. **License management**: Transfers Jobin licenses between accounts on a scheduled basis.
-4. **Error handling**: Automatically archives or retries tasks if Jobin encounters execution errors.
-5. **Invitation management**: Withdraws the oldest 600 LinkedIn invitations if pending invitations reach 900.
-6. **Error notifications**: Sends a warning if there are login errors.
-7. **Proxy/VPN support**: Ensures the IP address is set to New York City to avoid account flagging.
-
-## Project Structure
-
-
-
-Here's a comprehensive README.md file for your project:
-
-markdown
-Copy code
 # Jobin LinkedIn Automation
 
 This application automates browser actions required to run Jobin on LinkedIn accounts, ensuring efficient task execution while avoiding account flagging and blocking by LinkedIn. The application manages multiple LinkedIn accounts and Jobin licenses, handles execution errors, and automates task processes.
