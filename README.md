@@ -63,8 +63,8 @@ jobin-automation/
 ├── license-manager.js
 ├── error-handler.js
 └── config/
-    ├── accounts.json
-    └── config.json
+   ├── accounts.json
+   └── config.json
 ```
 
 
