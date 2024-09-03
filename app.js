@@ -1,13 +1,26 @@
-const express = require('express');
-const schedule = require('./schedule');
-const dotenv = require('dotenv');
-dotenv.config();
+const cron = require('node-cron');
+const { exec } = require('child_process');
 
-const app = express();
-const port = process.env.PORT || 3000;
+// Function to open Chrome browser
+function openChrome() {
+  exec('start chrome', (err) => {
+    if (err) {
+      console.error(`Error opening Chrome: ${err}`);
+    } else {
+      console.log('Chrome opened successfully');
+    }
+  });
+}
 
-schedule.start();
+// Schedule the task to run every day at 9 AM New York time
+function start() {
+  cron.schedule('0 9 * * *', () => {
+    console.log('Opening Chrome at 9 AM New York time');
+    openChrome();
+  }, {
+    timezone: "America/New_York"
+  });
+}
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+module.exports = { start };
+
