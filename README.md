@@ -1,6 +1,6 @@
 # Jobin LinkedIn Automation
 
-This application automates browser actions required to run Jobin on LinkedIn accounts, ensuring efficient task execution while avoiding account flagging and blocking by LinkedIn. The application manages multiple LinkedIn accounts and Jobin licenses, handles execution errors, and automates task processes.
+This application automates browser actions required to run Jobin on LinkedIn accounts, ensuring efficient task execution while avoiding account flagging and blocking by LinkedIn. The application manages multiple LinkedIn accounts and Jobin licenses, handles execution errors, and automates marketing tasks.
 
 ## Requirements
 
