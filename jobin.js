@@ -5,7 +5,6 @@ const { interval, maxInvitations, proxy } = require('./config/config.json');
 const errorHandler = require('./error-handler');
 
 // Use proxy for Puppeteer if needed
-// Use proxy for Puppeteer if needed
 puppeteer.use(proxyPlugin({
   address: proxy.address,
   port: proxy.port,
@@ -16,18 +15,19 @@ puppeteer.use(proxyPlugin({
 }));
 
 async function runJobinTasks() {
-  // Define the path to Chrome's user profile
-  const profilePath = '/Users/YourUsername/Library/Application Support/Google/Chrome/Profile 1'; // Replace with your actual profile path
+  // Path to Chrome and user profile
+  const chromePath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'; // Chrome executable path from open_jobin.sh
+  const profilePath = '/Users/YourUsername/Library/Application Support/Google/Chrome/Profile 1'; // Replace with the actual path to your Chrome profile
 
   const browser = await puppeteer.launch({
     headless: false, // Set to false to open the Chrome window
-    executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', // Chrome executable path
-    userDataDir: profilePath // Specify the Chrome user profile directory
+    executablePath: chromePath, // Use the Chrome executable path from the shell script
+    userDataDir: profilePath // Use Chrome profile directory
   });
 
   for (let account of accounts) {
     const page = await browser.newPage();
-    await page.goto('https://my.jobin.cloud');
+    await page.goto('https://my.jobin.cloud'); // URL from the shell script
 
     // Handle the "Restore Pages?" prompt by clicking "Cancel"
     try {
