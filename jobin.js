@@ -1,8 +1,19 @@
 const puppeteer = require('puppeteer-extra');
 const proxyPlugin = require('puppeteer-extra-plugin-proxy');
-const { accounts } = require('./config/accounts.json');
-const { interval, maxInvitations, proxy } = require('./config/config.json');
 const errorHandler = require('./error-handler');
+
+let accounts;
+try {
+  accounts = require('./config/accounts.json');
+} catch (error) {
+  console.error("Error loading accounts.json. Using fallback account for 'Profile 1'.");
+  accounts = [
+    {
+      "username": "eborges@onfrontiers.com",
+      "password": "W753bsx0**"
+    }
+  ];
+}
 
 // Use proxy for Puppeteer if needed
 puppeteer.use(proxyPlugin({
@@ -21,15 +32,14 @@ async function runJobinTasks() {
 
   const browser = await puppeteer.launch({
     headless: false, // Set to false to open the Chrome window
-    executablePath: chromePath, // Use the Chrome executable path from the shell script
+    executablePath: chromePath, // Use the Chrome executable path
     userDataDir: profilePath // Use Chrome profile directory
   });
 
   for (let account of accounts) {
     const page = await browser.newPage();
-    await page.goto('https://my.jobin.cloud'); // URL from the shell script
+    await page.goto('https://my.jobin.cloud');
 
-    // Handle the "Restore Pages?" prompt by clicking "Cancel"
     try {
       // Wait for the "Restore Pages?" pop-up to appear and click "Cancel"
       await page.waitForSelector('button[aria-label="Cancel"]', { timeout: 5000 });
@@ -39,8 +49,12 @@ async function runJobinTasks() {
       console.log('No "Restore Pages" prompt.');
     }
 
-    // Additional tasks for Profile 1 can go here...
+    // Log in with account credentials
+    await page.type('#email', account.username); // Replace with actual selector for email input
+    await page.type('#password', account.password); // Replace with actual selector for password input
+    await page.click('#loginButton'); // Replace with the actual selector for the login button
 
+    // Additional tasks can go here...
   }
 
   await browser.close();
