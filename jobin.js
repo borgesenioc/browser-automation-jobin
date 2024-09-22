@@ -15,7 +15,7 @@ try {
   ];
 }
 
-// Use proxy for Puppeteer if needed
+/* Use proxy for Puppeteer if needed
 puppeteer.use(proxyPlugin({
   address: proxy.address,
   port: proxy.port,
@@ -23,7 +23,7 @@ puppeteer.use(proxyPlugin({
     username: proxy.username,
     password: proxy.password
   }
-}));
+})); */
 
 async function runJobinTasks() {
   // Path to Chrome and user profile
